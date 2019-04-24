@@ -1,0 +1,114 @@
+header {
+  display: flex;
+  width: 100%;
+  padding: 20px 0;
+  justify-content: center; }
+
+/* icono/logo de la app (contiene a .app-name) */
+.app-c {
+  display: flex;
+  align-items: center;
+  width: 50%; }
+
+/* nombre del logo de la app */
+.app-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin-left: 150px; }
+
+/* contenerod de iconos para redes sociales */
+.icon-g {
+  display: flex;
+  justify-content: flex-end;
+  width: 35%;
+  align-items: center; }
+
+/* menu flotante en dispositivos moviles */
+.menu-active {
+  display: none; }
+
+/* iconos de redes sociales */
+.icon-h {
+  margin-right: 20px;
+  opacity: .6;
+  transition: all 200ms; }
+
+.icon-h:hover {
+  opacity: 1; }
+
+/* contenedor de enlace a login.php */
+.login-c {
+  display: flex;
+  align-items: center;
+  width: 15%; }
+
+.login {
+  /* enlace a login.php */
+  text-decoration: none;
+  padding: 10px;
+  margin-left: 10px;
+  border: 2px solid rgba(233, 233, 233, 0.514);
+  border-radius: 15px;
+  font-size: 0.9em;
+  color: white;
+  transition: all 250ms;
+  opacity: .8; }
+
+.login:hover {
+  opacity: 1; }
+
+/* media querie for devices less or equal 600px */
+@media (max-width: 600px) {
+  .icon-g {
+    display: none; }
+  .login-c {
+    display: none; }
+  .app-name {
+    margin: 0;
+    padding-left: 15px; }
+  .app-c {
+    width: 70%;
+    justify-content: flex-start; }
+  .menu-active {
+    display: flex;
+    z-index: 100; }
+  .menu {
+    display: flex;
+    justify-content: flex-end;
+    width: 120px;
+    padding-top: 5px;
+    padding-right: 20px;
+    z-index: 100;
+    cursor: pointer; }
+  .menu-active ul {
+    /* display: flex;
+    flex-direction: column; */
+    position: absolute;
+    margin: 0;
+    padding-left: 30px;
+    padding-top: 120px;
+    width: 200px;
+    height: 300px;
+    top: 0;
+    right: 0;
+    transform: translateY(-420px);
+    /* right: -230px; */
+    background: #181818;
+    border-bottom-left-radius: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: ease-in-out 300ms; }
+  .menu-active ul li {
+    display: flex;
+    list-style: none;
+    padding: 10px 10px;
+    border-bottom: 1px solid rgba(230, 230, 230, 0.226); }
+  .menu-active ul li a {
+    text-decoration: none;
+    color: azure; }
+  #btn-menu {
+    display: none; }
+  #btn-menu:checked ~ ul {
+    transform: translateY(0); } }
