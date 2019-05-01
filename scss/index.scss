@@ -1,0 +1,118 @@
+
+@import "signup";
+@import "login";
+@import "header";
+@import "footer";
+
+@font-face {
+    font-family: Propins-B;
+    src: url(../src/fonts/popins/Poppins-Medium.ttf);
+
+    font-family: Propins-El;
+    src: url(../src/fonts/popins/Poppins-Medium.ttf);
+}
+* {
+    font-family: Propins-El;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+/* Pagina principal */
+.main-page {
+    display: flex;
+    flex-direction: column;
+    background-image: url("../src/images/pc/earth.svg");
+    background-attachment: scroll;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.section-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+/* Titulo principal */
+.title-h {
+    text-align: center;
+    padding-top: 30px;
+    font-size: 2.8em;
+    color: rgb(241, 241, 241);
+}
+.sub-title-h {
+    text-align: center;
+    padding-bottom: 30px;
+    font-size: 1em;
+    color: rgb(179, 179, 179);
+}
+/* contenedores de contenido */
+.box-1-c, .box-2-c {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+/* contenido en cajas */
+.box-1, .box-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0 50px 0;
+    background: rgba(220, 220, 220, 0.541);
+    width: 600px;
+    height: 550px;
+    border: 2px solid rgba(110, 110, 110, 0.541);
+    border-radius: 10px;
+}
+.box-2 {
+    display: none;
+}
+
+/* Section 2 */
+.section-2, .s-2-content {
+    display: none;
+}
+/* None */
+
+
+/* media queries */
+@media (max-width: 600px)  {
+    body {
+        background-image: url("../src/images/smartphone/bg-430-lines.svg");
+        background-repeat: no-repeat;
+    }
+    .title-h {
+        font-size: 2.5em;
+        padding-top: 30px;
+    }
+    
+    .sub-title-h {
+        font-size: 1em;
+    }
+
+    .box-1 {
+        width: 350px;
+        height: 400px;
+    }
+    .box-2 {
+        display: flex;
+        /* margin-block-end: 20px; */
+        width: 350px;
+        height: 400px;
+    }
+    .section-2 {
+        display: flex;
+        justify-content: center;
+        height: 800px;
+        background-image: url("../src/images/smartphone/bg-430-lines2.svg");
+
+    }
+    .s-2-content {
+        display: flex;
+    }
+}

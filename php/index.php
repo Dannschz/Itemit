@@ -19,32 +19,3 @@ if(isset($_SESSION['user_id'])) {
 }
 
 ?>
-
-<?php require '../partials/head.php' ?>
-
-    <main class="main-page">
-        <?php require '../partials/header.php' ?>
-
-        <section class="section-1">
-            <h1 class="title-h">Nada que hacer?</h1>
-            <p class="sub-title-h">Registra y almacena Articulos de todo tipo, de esta forma jamás olvidarás aquello que tanto deseas</p>
-            <div class="box-1-c">
-                <div class="box-1">
-                    Image Here
-                </div>
-            </div>
-        </section>
-        <section class="section-2">
-            <div class="box-2-content">
-                <div class="box-2">
-                    Any content here
-                </div>
-            </div>
-        </section>
-
-        <?php require '../partials/footer.php' ?>
-    </main>
-    
-    <script src="../app/index.js"></script>
-</body>
-</html>

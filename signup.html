@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Itemit</title>
+    <link rel="shortcut icon" href="src/icons/itemit-icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+    <main class="signup-page">
+        <div class="form-container">
+            <h1 class="title-form">Crear una Cuenta</h1>
+            <form id="Form">
+                <label id="email">Correo Electrónico &nbsp;<span class="span-email" id="email-error"></span></label>
+                <input id="input-email" type="text" name="email" value="">
+                <label id="user_name">Nombre de usuario &nbsp;<span class="span-user_name" id="user_name-error"></span></label>
+                <input id="input-user_name" type="text" name="user_name" value="">
+                <label id="password">Contraseña &nbsp;<span class="span-password" id="password-error"></span></label>
+                <input id="input-password" type="password" name="password" value="">
+                <div class="submit"><button type="submit">Registrate</button></div>
+                <a class="foot-form" href="login.html">¿Ya tienes una cuenta?</a>
+            </form>
+        </div>
+    </main>
+    <script src="scripts/signup.js"></script>
+</body>
+</html>

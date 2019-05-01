@@ -1,53 +1,41 @@
 <?php
 
-session_start();
-
-if (isset($_SESSION['user_id'])) {
-    header("Location: /LoginPHP");
-}
-
 require 'database.php';
 
-if(!empty($_POST['email'] && !empty($_POST['password']))) {
-    $email = $_POST['email'];
-    $query = "SELECT id, email, password FROM users WHERE email = '$email'";
-    $records = $mysql->query($query);
-    $results = $records->fetch_array(MYSQLI_ASSOC);
+class User 
+{
+    public $name;
+    public $email;
+    public $auth;
+    public $message;
 
-    $message = '';
-
-    if(count($results) > 0 && password_verify($_POST['password'], $results['password'])) {
-        $_SESSION['user_id'] = $results['id'];
-        header("Location: /LoginPHP");
-    } else {
-        $message = "Sorry, those credentials don't match";
+    function __construct($name, $email, $auth, $message)
+    {
+        $this->name = $name;
+        $this->email = $email;
+        $this->auth = $auth;
+        $this->message = $message;
     }
 }
 
+if(!empty($_POST['email'] && !empty($_POST['password']))) {
+    $email = $_POST['email'];
+    $query = "SELECT user_name, email, password FROM users WHERE email = '$email'";
+
+    $user = new User('', $email, false, '');
+
+    if($records = $mysqli->query($query)) {
+        $results = $records->fetch_assoc();
+
+        if(count($results) > 0 && $email == $results['email'] && password_verify($_POST['password'], $results['password'])) {
+            $user->auth = true;
+            $user->name = $results['user_name'];
+            $user->message = 'Bienvenido ' . $user->name;
+        } else {
+            $user->message = 'Este usuario no existe';
+        }
+    }
+    echo json_encode($user);
+}
+
 ?>
-
-    <?php require '../partials/head.php' ?>
-    
-    <main class="login-page">
-        <?php if(!empty($message)) { ?>
-            <style> .user_create {display: flex; justify-content: center;} </style>
-            <style> p {width; 350px; padding: 10px; border-radius: 3px; color: #fff; background: #192; font-size: 1.2em;} </style>
-            <div class="user_create"><p><?= $message ?></p></div>
-        
-        <?php } ?>
-
-        <div class="form-container">
-            <h1>Bienvenido</h1>
-            <h4>¡Estamos contentos de verte!</h4>
-            <form id="loginForm" >
-                <label>Correo Electrónico</label>
-                <input type="text" name="email" required>
-                <label>Contraseña</label>
-                <input type="password" name="password" required>
-                <div class="submit"><button type="submit">Inicia Sesión</button></div>
-                <p class="r">¿Necesitas una cuenta? <a href="signup.php"> Registrate</a></p>
-            </form>
-        </div>
-    </main>
-</body>
-</html>

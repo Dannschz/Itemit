@@ -1,0 +1,41 @@
+
+.signup-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+    min-height: 100vh;
+    background: url("../src/images/pc/login.svg") no-repeat;
+    background-size: auto;
+}
+#signMessage {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    top: 50px;
+    border: 1px solid rgb(100, 170, 86);
+    border-radius: 5px;
+    background: rgb(117, 209, 117);
+    padding: 15px;
+    margin: 10px 0 20px 0;
+    color: rgb(30, 109, 30);
+    font-size: 1em;
+}
+.foot-form {
+    font-size: .9em;
+    margin-top:  4px;
+    margin-bottom: 50px;
+    text-decoration: none;
+    color: rgb(90, 142, 253);
+}
+
+@media screen and (max-width: 600px) {
+    .title-form {
+        font-size: .5em;
+    }
+    .form-container {
+        width: 400px;
+    }
+}

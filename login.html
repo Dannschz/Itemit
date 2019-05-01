@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Itemit</title>
+    <link rel="shortcut icon" href="src/icons/itemit-icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <main class="login-page">
+        <div class="form-container">
+            <h1 class="title-form">Bienvenido</h1>
+            <h4 class="sub-title-form">¡Estamos contentos de verte!</h4>
+            <form id="Form">
+                <label>Correo Electrónico &nbsp;<span class="span-email" id="email-error"></span></label>
+                <input type="text" id="input-email" name="email">
+                <label>Contraseña &nbsp;<span class="span-password" id="password-error"></span></label>
+                <input type="password" id="input-password" name="password">
+                <div class="submit"><button type="submit">Inicia Sesión</button></div>
+                <p class="r">¿Necesitas una cuenta? <a href="signup.html"> Registrate</a></p>
+            </form>
+        </div>
+    </main>
+    <script src="scripts/login.js"></script>
+</body>
+</html>
